@@ -20,7 +20,7 @@ export default function DataViewer() {
 
     return (
         <div>
-            <div className="mt-6 mb-2 text-center">
+            <div className="mt-6 mb-4 text-center">
                 { inf?.prev  ? <button className="mx-5 text-greennormal font-bold transform transition duration-100 hover:scale-105" onClick={(e) => dataFetch(inf.prev)}>&lt; Prev</button> : null}
                 { inf?.next  ? <button className="mx-5 text-greennormal font-bold transform transition duration-100 hover:scale-105" onClick={(e) => dataFetch(inf.next)}>Next &gt;</button> : null}
             </div>
