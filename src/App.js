@@ -10,7 +10,7 @@ import Contact from './Pages/Contact';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={'/rickandmorty/'}>
       <Routes>
         <Route path='/' element={<Head />}>
           <Route index element={<Home />} />
