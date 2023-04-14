@@ -26,7 +26,7 @@ export default function DataViewer() {
             </div>
             <div className="flex flex-wrap gap-10 justify-center px-80">
                 {data?.map(x => {
-                    return <Card key={x.id} c={x} />
+                    return <Card className="animate__fadeInLeft" key={x.id} c={x} />
                 })}
             </div>
         </div>
