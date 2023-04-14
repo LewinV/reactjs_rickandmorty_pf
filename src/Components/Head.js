@@ -1,5 +1,5 @@
 import Logo from '../Assets/img/logo.png';
-import { Outlet, Link, NavLink } from 'react-router-dom';
+import { Outlet, NavLink } from 'react-router-dom';
 
 export default function Head() {
     return (
@@ -12,13 +12,13 @@ export default function Head() {
                 <div className=''>
                     <ul className='text-greenmenu font-bold h-full flex items-center'>
                         {/* <Link className={(isActive) => (isActive ? 'mx-10 text-[#db3d3d]' : 'mx-10 text-greenmenu')} to="/">Home</Link> */}
-                        <NavLink className={({isActive, isPending}) => isActive ? 'hover:text-[#569441] mx-10 underline' : 'hover:text-[#569441] mx-10'} to="/">
+                        <NavLink className={({isActive, isPending}) => isActive ? 'hover:text-[#569441] mx-10 underline transform transition duration-100 hover:scale-105' : 'hover:text-[#569441] mx-10 transform transition duration-100 hover:scale-105'} to="/">
                             Home
                         </NavLink>
-                        <NavLink className={({isActive, isPending}) => isActive ? 'hover:text-[#569441] mx-10 underline' : 'hover:text-[#569441] mx-10'} to="/about">
+                        <NavLink className={({isActive, isPending}) => isActive ? 'hover:text-[#569441] mx-10 underline transform transition duration-100 hover:scale-105' : 'hover:text-[#569441] mx-10 transform transition duration-100 hover:scale-105'} to="/about">
                             About
                         </NavLink>
-                        <NavLink className={({isActive, isPending}) => isActive ? 'hover:text-[#569441] mx-10 underline' : 'hover:text-[#569441] mx-10'} to="/contact">
+                        <NavLink className={({isActive, isPending}) => isActive ? 'hover:text-[#569441] mx-10 underline transform transition duration-100 hover:scale-105' : 'hover:text-[#569441] mx-10 transform transition duration-100 hover:scale-105'} to="/contact">
                             Contact
                         </NavLink>
                     </ul>

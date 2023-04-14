@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Card({c}){
     return (
-        <div className="w-[200px] shadow-md rounded-lg">
+        <div className="w-[200px] shadow-md rounded-lg transform transition duration-100 hover:scale-105">
             <div>
                 <img className="rounded-t-lg w-[200px] h-[150px]" src={c.image}/>
             </div>

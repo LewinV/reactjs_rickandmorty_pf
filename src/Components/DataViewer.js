@@ -2,28 +2,32 @@ import React, { useEffect, useState } from "react";
 import Card from "./Card";
 
 export default function DataViewer() {
+    const apiPath = 'https://rickandmortyapi.com/api/character?page1';
     const [data, setData] = useState();
+    const [inf, setInf] = useState();
+
+    const dataFetch = async (path = apiPath) => {
+        const response = await fetch(path);
+        const data = await response.json();
+        let { results, info } = data;
+        setData(results);
+        setInf(info);
+    };
 
     useEffect(() => {
-        const dataFetch = async() => {
-            const response = await fetch('https://rickandmortyapi.com/api/character/?page=1');
-            const data = await response.json();
-            let { results, info } = data;
-            setData(results);
-        };
-
         dataFetch();
     }, [])
 
     return (
         <div>
-            <div className="flex flex-wrap gap-10 justify-center px-80">
-                {data?.map( x => {
-                    return <Card key={x.id}  c={x}/>
-                })}
+            <div className="mt-6 mb-2 text-center">
+                { inf?.prev  ? <button className="mx-5 text-greennormal font-bold transform transition duration-100 hover:scale-105" onClick={(e) => dataFetch(inf.prev)}>&lt; Prev</button> : null}
+                { inf?.next  ? <button className="mx-5 text-greennormal font-bold transform transition duration-100 hover:scale-105" onClick={(e) => dataFetch(inf.next)}>Next &gt;</button> : null}
             </div>
-            <div className="mt-6 text-center">
-                Prev 1 2 3 Next 
+            <div className="flex flex-wrap gap-10 justify-center px-80">
+                {data?.map(x => {
+                    return <Card key={x.id} c={x} />
+                })}
             </div>
         </div>
     )
