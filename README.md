@@ -1,3 +1,3 @@
-# Rick and Morty characters simple web pages
+# Rick and Morty characters simple web page
 - URL: https://lewinv.github.io/rickandmorty/
 
